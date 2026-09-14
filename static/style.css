@@ -6,43 +6,150 @@ body {
     margin: 0;
     min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     font-family: Arial, sans-serif;
+
     background: #111;
     color: white;
 }
 
+.development-banner {
+    position: relative;
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f5c400;
+    color: #000;
+
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Black diagonal stripes */
+.development-banner::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    width: 200%;
+
+    background: repeating-linear-gradient(
+        -60deg,
+        transparent 0px,
+        transparent 70px,
+        #000 70px,
+        #000 105px
+    );
+
+    animation: warning-stripes 3s linear infinite;
+
+    pointer-events: none;
+}
+
+/* Text */
+.development-banner span {
+    position: relative;
+    z-index: 2;
+
+    padding: 8px 18px;
+
+    background: #f5c400;
+    border: 2px solid #000;
+
+    font-size: 22px;
+    font-weight: 900;
+}
+
+@keyframes warning-stripes {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-105px);
+    }
+}
+
+/* Main page */
+
 main {
+    min-height: calc(100vh - 54px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     text-align: center;
 }
 
 h1 {
-    font-size: 64px;
-    margin-bottom: 10px;
+    margin: 0;
+
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -3px;
 }
 
 p {
+    margin-top: 15px;
+
     color: #aaa;
     font-size: 20px;
 }
 
-button {
-    margin-top: 20px;
-    padding: 12px 24px;
+/* Buttons */
 
-    border: none;
-    border-radius: 8px;
+.buttons {
+    display: flex;
+    gap: 12px;
 
-    background: #3578e5;
-    color: white;
+    margin-top: 35px;
 
-    font-size: 16px;
-    cursor: pointer;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-button:hover {
+.button {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border: 1px solid #444;
+    border-radius: 8px;
+
+    background: #1b1b1b;
+    color: white;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
+}
+
+.button:hover {
+    background: #252525;
+    border-color: #666;
+
+    transform: translateY(-2px);
+}
+
+.button.primary {
+    background: #3578e5;
+    border-color: #3578e5;
+}
+
+.button.primary:hover {
     background: #2864c7;
+    border-color: #2864c7;
 }

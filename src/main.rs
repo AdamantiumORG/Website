@@ -11,6 +11,8 @@ async fn main() {
 
     let app = Router::new()
         .route("/", get(home))
+        .route("/download", get(download))
+        .route("/docs", get(docs))
         .nest_service("/static", ServeDir::new("static"));
 
     let listener = tokio::net::TcpListener::bind(&addr)
@@ -26,4 +28,12 @@ async fn main() {
 
 async fn home() -> Html<&'static str> {
     Html(include_str!("../static/index.html"))
+}
+
+async fn download() -> Html<&'static str> {
+    Html(include_str!("../static/download.html"))
+}
+
+async fn docs() -> Html<&'static str> {
+    Html(include_str!("../static/docs.html"))
 }
