@@ -110,6 +110,81 @@ p {
 
 /* Buttons */
 
+.docs-page {
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 104px 24px 48px;
+    text-align: left;
+}
+
+.docs-page .buttons {
+    justify-content: flex-start;
+    margin: 0 0 40px;
+}
+
+.markdown-content {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.markdown-content h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    letter-spacing: -1px;
+    line-height: 1.2;
+}
+
+.markdown-content p, .markdown-content li {
+    color: #ccc;
+    font-size: 17px;
+}
+
+.markdown-content a {
+    color: #79aaff;
+}
+
+.markdown-content pre {
+    padding: 20px;
+    overflow-x: auto;
+    background: #1b1b1b;
+    border: 1px solid #444;
+    border-radius: 8px;
+}
+
+.markdown-content code {
+    background: #1b1b1b;
+    font-size: 0.9em;
+}
+
+.markdown-content table {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+.markdown-content th, .markdown-content td {
+    padding: 10px 16px;
+    border: 1px solid #444;
+}
+
+.markdown-content img {
+    max-width: 100%;
+}
+
+.download-page {
+    padding: 104px 24px 32px;
+}
+
+.download-page h1 {
+    font-size: clamp(36px, 7vw, 72px);
+    letter-spacing: -0.04em;
+}
+
+.download-details {
+    margin-top: 24px;
+    font-size: 16px;
+}
+
 .buttons {
     display: flex;
     gap: 12px;

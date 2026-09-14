@@ -1,2 +1,5 @@
 /target
 .env
+
+# Docs from AdamantiumORG/Adamantium/docs just use them there is support for markdown
+/docs
