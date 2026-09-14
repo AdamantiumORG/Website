@@ -9,7 +9,6 @@ async fn main() {
 
     let app = Router::new().route("/", get(home));
 
-    // 4. Uruchom serwer
     let listener = tokio::net::TcpListener::bind(&addr)
         .await
         .expect("Unable to bind to address");
@@ -21,7 +20,6 @@ async fn main() {
         .expect("Error while serving the server");
 }
 
-// Funkcja obsługująca stronę główną
 async fn home() -> Html<&'static str> {
     Html("<h1>Hello World!</h1>")
 }
